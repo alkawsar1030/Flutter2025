@@ -15,6 +15,7 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         home: Homepage());
+
   }
   
 }
@@ -23,6 +24,8 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(title: Center(child: Text('Title Bar of My first App'))) ,
+      body: Center( child: Text("This is body")),
+
 
 
     );
