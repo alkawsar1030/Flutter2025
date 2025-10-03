@@ -36,6 +36,7 @@ class App extends StatelessWidget {
         tooltip: 'নতুন কিছু এড কর', // Text displayed on long-press//
 
       ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat, // Or .centerDocked
 
 
 
