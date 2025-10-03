@@ -24,14 +24,14 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(title: Center(child: Text('Title Bar of My first App'))) ,
-      body: Center( child: Text("This is body",style: TextStyle(
-        fontSize: 50, color: Colors.orange, fontWeight:FontWeight.bold,backgroundColor:Colors.cyan
-
-
-      )
-
-
-        ,)),
+        body: Center(
+          child: RichText(text: TextSpan(
+            children: [
+              TextSpan(text: "This",style: TextStyle(color: Colors.orange,fontSize:40)),
+              TextSpan(text: "is My Body Text",style: TextStyle(color: Colors.blue,fontSize: 20))
+            ]
+          )),
+        ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           // Action to perform when the button is pressed
@@ -44,10 +44,11 @@ class App extends StatelessWidget {
 
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat, // Or .centerDocked
-
-
-
     );
+
+
+
+
   }
   
  }
