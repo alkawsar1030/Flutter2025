@@ -24,7 +24,14 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(title: Center(child: Text('Title Bar of My first App'))) ,
-      body: Center( child: Text("This is body")),
+      body: Center( child: Text("This is body",style: TextStyle(
+        fontSize: 50, color: Colors.orange, fontWeight:FontWeight.bold,backgroundColor:Colors.cyan
+
+
+      )
+
+
+        ,)),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           // Action to perform when the button is pressed
