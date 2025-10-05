@@ -16,9 +16,20 @@ class Homepage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Center(child: Text('Title Bar of My first App'))),
-      body: Center(
-        child: Container(height: 100, width: 100, color: Colors.orange),
+      body: Column(
+        //column decorates its elements from top to buttom
+        //onthe oher hand row decorates its elements from left to right
+        children: <Widget>[
+          Container(height: 50, width: 50, color: Colors.cyan),
+          SizedBox(height: 20),
+          Container(height: 50, width: 50, color: Colors.green),
+          SizedBox(height: 20),
+          Container(height: 50, width: 50, color: Colors.red),
+          SizedBox(height: 20),
+          Container(height: 50, width: 50, color: Colors.yellow),
+        ],
       ),
+
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           // Action to perform when the button is pressed
