@@ -16,20 +16,13 @@ class Homepage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Center(child: Text('Title Bar of My first App'))),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center, //for column
-        crossAxisAlignment: CrossAxisAlignment.center, //for row
-        //column decorates its elements from top to buttom
-        //onthe oher hand row decorates its elements from left to right
-        children: <Widget>[
-          Divider(height: 2, thickness: 1, color: Colors.black),
-          Container(height: 50, width: 50, color: Colors.cyan),
-          SizedBox(height: 20),
-          Container(height: 50, width: 50, color: Colors.green),
-          SizedBox(height: 20),
-          Container(height: 50, width: 50, color: Colors.red),
-          SizedBox(height: 20),
-          Container(height: 50, width: 50, color: Colors.yellow),
+      body: Stack(
+        //example of Stack with Alignment center
+        alignment: Alignment.center,
+        children: [
+          Container(height: 300, width: 300, color: Colors.orange), //big box
+          Container(height: 200, width: 200, color: Colors.green), //2 big box
+          Container(height: 100, width: 100, color: Colors.blue), //small box
         ],
       ),
 
