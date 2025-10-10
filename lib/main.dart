@@ -24,37 +24,15 @@ class Homepage extends StatelessWidget {
         color: Colors.grey,
         width: double.infinity,
         height: 300,
-        child: Wrap(
-          //example of Stack with Alignment center
-          // left to right space
-          //up to down space
-          spacing: 5,
-          runSpacing: 5,
-          alignment: WrapAlignment.center,
-          runAlignment: WrapAlignment.center,
-          crossAxisAlignment: WrapCrossAlignment.center,
-          children: [
-            Container(height: 100, width: 50, color: Colors.red),
-            //big box
-            Container(height: 80, width: 30, color: Colors.green),
-            //2 big box
-            Container(height: 50, width: 60, color: Colors.blue),
-            Container(height: 100, width: 50, color: Colors.red),
-            //big box
-            Container(height: 80, width: 30, color: Colors.green),
-            //2 big box
-            Container(height: 50, width: 60, color: Colors.blue),
-            Container(height: 100, width: 50, color: Colors.red),
-            //big box
-            Container(height: 80, width: 30, color: Colors.green),
-            //2 big box
-            Container(height: 50, width: 60, color: Colors.blue),
-            Container(height: 100, width: 50, color: Colors.red),
-            //big box
-            Container(height: 80, width: 30, color: Colors.green),
-            //2 big box
-            Container(height: 50, width: 60, color: Colors.blue),
-          ],
+        child: Padding(
+          padding: EdgeInsetsGeometry.only(left: 10, top: 10),
+          child: Text(
+            'Padding TExt',
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              color: Colors.deepOrange,
+            ),
+          ),
         ),
       ),
 
