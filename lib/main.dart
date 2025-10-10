@@ -16,39 +16,20 @@ class App extends StatelessWidget {
 class Homepage extends StatelessWidget {
   const Homepage({super.key});
 
+  void showSnack(BuildContext context, String msg) {
+    ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(msg)));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Center(child: Text('Title Bar of My first App'))),
-      body: Container(
-        color: Colors.grey,
-        width: double.infinity,
-        height: 300,
-        child: Padding(
-          padding: EdgeInsetsGeometry.only(left: 10, top: 10),
-          child: Text(
-            'Padding TExt',
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-              color: Colors.deepOrange,
-            ),
-          ),
-        ),
-      ),
-
-      floatingActionButton: FloatingActionButton(
+      body: ElevatedButton(
         onPressed: () {
-          // Action to perform when the button is pressed
+          showSnack(context, 'This is Elevated Button');
         },
-        heroTag: FloatingActionButtonLocation.centerFloat,
-        // The icon displayed on the button
-        backgroundColor: Colors.orange,
-        // Custom background color
-        tooltip: 'নতুন কিছু এড কর',
-        child: Icon(Icons.add), // Text displayed on long-press//
+        child: Text('Click ME'),
       ),
-      floatingActionButtonLocation:
-          FloatingActionButtonLocation.centerFloat, // Or .centerDocked
     );
   }
 }
