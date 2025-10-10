@@ -9,7 +9,7 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(home: Homepage());
+    return MaterialApp(debugShowCheckedModeBanner: false, home: Homepage());
   }
 }
 
@@ -20,19 +20,42 @@ class Homepage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Center(child: Text('Title Bar of My first App'))),
-      body: Row(
-        //example of Stack with Alignment center
-        // left to right space
-        //up to down space
-        spacing: 5,
-
-        children: [
-          Flexible(flex: 1, child: Container(height: 100, color: Colors.red)),
-          //big box
-          Flexible(flex: 2, child: Container(height: 80, color: Colors.green)),
-          //2 big box
-          Flexible(flex: 2, child: Container(height: 50, color: Colors.blue)),
-        ],
+      body: Container(
+        color: Colors.grey,
+        width: double.infinity,
+        height: 300,
+        child: Wrap(
+          //example of Stack with Alignment center
+          // left to right space
+          //up to down space
+          spacing: 5,
+          runSpacing: 5,
+          alignment: WrapAlignment.center,
+          runAlignment: WrapAlignment.center,
+          crossAxisAlignment: WrapCrossAlignment.center,
+          children: [
+            Container(height: 100, width: 50, color: Colors.red),
+            //big box
+            Container(height: 80, width: 30, color: Colors.green),
+            //2 big box
+            Container(height: 50, width: 60, color: Colors.blue),
+            Container(height: 100, width: 50, color: Colors.red),
+            //big box
+            Container(height: 80, width: 30, color: Colors.green),
+            //2 big box
+            Container(height: 50, width: 60, color: Colors.blue),
+            Container(height: 100, width: 50, color: Colors.red),
+            //big box
+            Container(height: 80, width: 30, color: Colors.green),
+            //2 big box
+            Container(height: 50, width: 60, color: Colors.blue),
+            Container(height: 100, width: 50, color: Colors.red),
+            //big box
+            Container(height: 80, width: 30, color: Colors.green),
+            //2 big box
+            Container(height: 50, width: 60, color: Colors.blue),
+          ],
+        ),
       ),
 
       floatingActionButton: FloatingActionButton(
