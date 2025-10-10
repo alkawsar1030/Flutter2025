@@ -27,11 +27,11 @@ class Homepage extends StatelessWidget {
         spacing: 5,
 
         children: [
-          Expanded(child: Container(height: 100, color: Colors.red)),
+          Flexible(flex: 1, child: Container(height: 100, color: Colors.red)),
           //big box
-          Expanded(child: Container(height: 80, color: Colors.green)),
+          Flexible(flex: 2, child: Container(height: 80, color: Colors.green)),
           //2 big box
-          Expanded(child: Container(height: 50, color: Colors.blue)),
+          Flexible(flex: 2, child: Container(height: 50, color: Colors.blue)),
         ],
       ),
 
