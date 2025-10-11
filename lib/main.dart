@@ -23,45 +23,6 @@ class Homepage extends StatelessWidget {
       body: Center(
         child: Column(
           children: [
-            ElevatedButton(
-              onPressed: () {
-                showSnack(context, 'This is Elevated Button');
-              },
-              child: Text('Click ME'),
-            ),
-
-            SizedBox(height: 5),
-            OutlinedButton(
-              onPressed: () {
-                showSnack(context, 'This is Outlined Button');
-              },
-              child: Text('Click ME'),
-            ),
-            SizedBox(height: 5),
-            TextButton(
-              onPressed: () {
-                showSnack(context, 'This is Text Button');
-              },
-              child: Text('Click ME'),
-            ),
-
-            SizedBox(height: 5),
-            IconButton(
-              onPressed: () {
-                showSnack(context, 'This is icon Button');
-              },
-              icon: Icon(Icons.icecream_outlined),
-            ),
-            SizedBox(height: 5),
-            InkWell(
-              onDoubleTap: () {
-                showSnack(
-                  context,
-                  'Doubble Tap Pressed , this is an example of InkWell',
-                );
-              },
-              child: Icon(Icons.access_alarms),
-            ),
             Tooltip(
               //toolTrip as a class
               message: 'This is a helpful tip!',
@@ -76,13 +37,60 @@ class Homepage extends StatelessWidget {
                 child: Text('Press Me'),
               ),
             ),
+
+            SizedBox(height: 5),
+            Tooltip(
+              message: 'OutlinedButton ',
+              child: OutlinedButton(
+                onPressed: () {
+                  showSnack(context, 'This is Outlined Button');
+                },
+                child: Text('Click ME'),
+              ),
+            ),
+            SizedBox(height: 5),
+            Tooltip(
+              message: 'TextButton',
+              child: TextButton(
+                onPressed: () {
+                  showSnack(context, 'This is Text Button');
+                },
+                child: Text('Click ME'),
+              ),
+            ),
+
+            SizedBox(height: 5),
+            IconButton(
+              tooltip: 'click ToolTrip property',
+              onPressed: () {
+                showSnack(context, 'This is icon Button');
+              },
+              icon: Icon(Icons.icecream_outlined),
+            ),
+            SizedBox(height: 5),
+            Tooltip(
+              message: 'InkWell',
+              child: InkWell(
+                onLongPress: () {
+                  showSnack(context, 'long Pressed ');
+                },
+                onDoubleTap: () {
+                  showSnack(context, 'Doubble Tap Pressed InkWell');
+                },
+                onTap: () {
+                  showSnack(context, 'single Tap Pressed InkWell');
+                },
+
+                child: Icon(Icons.access_alarms),
+              ),
+            ),
           ],
         ),
       ),
     );
   }
 
-  void showSnack(BuildContext context, String msg) {
-    ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(msg)));
+  void showSnack(BuildContext ctx, String msg) {
+    ScaffoldMessenger.of(ctx).showSnackBar(SnackBar(content: Text(msg)));
   }
 }
