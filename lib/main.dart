@@ -19,7 +19,19 @@ class Homepage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Center(child: Text('Title Bar of My first App'))),
+      appBar: AppBar(
+        title: Text('Custom Gradient AppBar'),
+        flexibleSpace: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors: [Colors.purple, Colors.blue],
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+            ),
+          ),
+        ),
+        toolbarHeight: 50, // Makes AppBar taller
+      ),
       body: Center(
         child: Column(
           children: [
@@ -82,6 +94,25 @@ class Homepage extends StatelessWidget {
                 },
 
                 child: Icon(Icons.access_alarms),
+              ),
+            ),
+
+            //liner Gradiant
+            Container(
+              width: 200,
+              height: 200,
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  colors: [Colors.blue, Colors.purple],
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                ),
+              ),
+              child: Center(
+                child: Text(
+                  'Linear Gradient',
+                  style: TextStyle(color: Colors.white, fontSize: 18),
+                ),
               ),
             ),
           ],
