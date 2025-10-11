@@ -24,9 +24,10 @@ class Homepage extends StatelessWidget {
         flexibleSpace: Container(
           decoration: BoxDecoration(
             gradient: LinearGradient(
-              colors: [Colors.purple, Colors.blue],
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
+              colors: [Colors.purple, Colors.blue, Colors.teal],
+              begin: Alignment.topLeft,
+
+              end: Alignment.centerRight,
             ),
           ),
         ),
@@ -113,6 +114,19 @@ class Homepage extends StatelessWidget {
                   'Linear Gradient',
                   style: TextStyle(color: Colors.white, fontSize: 18),
                 ),
+              ),
+            ),
+
+            //gradiant on Text
+            Text(
+              'Gradient Text',
+              style: TextStyle(
+                fontSize: 50,
+                fontWeight: FontWeight.bold,
+                foreground: Paint()
+                  ..shader = LinearGradient(
+                    colors: <Color>[Colors.green, Colors.black, Colors.red],
+                  ).createShader(Rect.fromLTWH(50, 0, 400, 10)),
               ),
             ),
           ],
