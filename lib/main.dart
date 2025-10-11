@@ -52,6 +52,30 @@ class Homepage extends StatelessWidget {
               },
               icon: Icon(Icons.icecream_outlined),
             ),
+            SizedBox(height: 5),
+            InkWell(
+              onDoubleTap: () {
+                showSnack(
+                  context,
+                  'Doubble Tap Pressed , this is an example of InkWell',
+                );
+              },
+              child: Icon(Icons.access_alarms),
+            ),
+            Tooltip(
+              //toolTrip as a class
+              message: 'This is a helpful tip!',
+              child: ElevatedButton(
+                onPressed: () {
+                  showSnack(
+                    context,
+                    'Here is the example of TolTrip applying on ElevatedButton',
+                  );
+                  // Button action
+                },
+                child: Text('Press Me'),
+              ),
+            ),
           ],
         ),
       ),
