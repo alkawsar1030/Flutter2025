@@ -162,37 +162,19 @@ class Homepage extends StatelessWidget {
             ),
             SizedBox(height: 5),
 
-            CheckboxListTile(
-              title: Text('Check here or uncheck'),
-              subtitle: Text("Read the privacy policy"),
-              secondary: Icon(Icons.privacy_tip),
+            Center(
+              child: Slider(
+                value: 10,
 
-              value: false,
-              onChanged: (value) {
-                if (value == true) {
-                  showSnack(context, 'true');
-                }
-                if (value == false) {
-                  showSnack(context, 'false');
-                }
-              },
-            ),
-            SizedBox(height: 5),
-
-            SwitchListTile(
-              title: Text('Check here or uncheck'),
-              subtitle: Text("Read the privacy policy"),
-              secondary: Icon(Icons.privacy_tip),
-
-              value: true,
-              onChanged: (value) {
-                if (value == true) {
-                  showSnack(context, 'true');
-                }
-                if (value == false) {
-                  showSnack(context, 'false');
-                }
-              },
+                // ✅ সরাসরি সংখ্যা
+                min: 0,
+                max: 100,
+                divisions: 10,
+                label: 'Increase value',
+                onChanged: (label) {
+                  showSnack(context, label.toString());
+                }, // ⚠️ disabled
+              ),
             ),
           ],
         ),
