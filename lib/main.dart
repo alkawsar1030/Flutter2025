@@ -162,7 +162,28 @@ class Homepage extends StatelessWidget {
             ),
             SizedBox(height: 5),
 
-            Checkbox(
+            CheckboxListTile(
+              title: Text('Check here or uncheck'),
+              subtitle: Text("Read the privacy policy"),
+              secondary: Icon(Icons.privacy_tip),
+
+              value: false,
+              onChanged: (value) {
+                if (value == true) {
+                  showSnack(context, 'true');
+                }
+                if (value == false) {
+                  showSnack(context, 'false');
+                }
+              },
+            ),
+            SizedBox(height: 5),
+
+            SwitchListTile(
+              title: Text('Check here or uncheck'),
+              subtitle: Text("Read the privacy policy"),
+              secondary: Icon(Icons.privacy_tip),
+
               value: true,
               onChanged: (value) {
                 if (value == true) {
