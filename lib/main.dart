@@ -176,6 +176,20 @@ class Homepage extends StatelessWidget {
                 }, // ⚠️ disabled
               ),
             ),
+            Slider(
+              //Example 02
+              value: 50,
+              min: 0,
+              max: 100,
+              divisions: 10,
+              label: '50',
+              onChanged: (value) {},
+              activeColor: Colors.blue,
+              inactiveColor: Colors.grey,
+              thumbColor: Colors.red,
+              autofocus: true,
+              mouseCursor: SystemMouseCursors.click,
+            ),
           ],
         ),
       ),
