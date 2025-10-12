@@ -97,11 +97,11 @@ class Homepage extends StatelessWidget {
                 child: Icon(Icons.access_alarms),
               ),
             ),
-
+            SizedBox(height: 5),
             //liner Gradiant
             Container(
-              width: 200,
-              height: 200,
+              width: 50,
+              height: 50,
               decoration: BoxDecoration(
                 gradient: LinearGradient(
                   colors: [Colors.blue, Colors.purple],
@@ -112,16 +112,17 @@ class Homepage extends StatelessWidget {
               child: Center(
                 child: Text(
                   'Linear Gradient',
-                  style: TextStyle(color: Colors.white, fontSize: 18),
+                  style: TextStyle(color: Colors.white, fontSize: 5),
                 ),
               ),
             ),
+            SizedBox(height: 5),
 
             //gradiant on Text
             Text(
               'Gradient Text',
               style: TextStyle(
-                fontSize: 50,
+                fontSize: 20,
                 fontWeight: FontWeight.bold,
                 foreground: Paint()
                   ..shader = LinearGradient(
@@ -129,12 +130,47 @@ class Homepage extends StatelessWidget {
                   ).createShader(Rect.fromLTWH(50, 0, 400, 10)),
               ),
             ),
+            SizedBox(height: 5),
 
             TextFormField(
               decoration: InputDecoration(labelText: 'input din'),
 
               onFieldSubmitted: (value) {
                 showSnack(context, value);
+              },
+            ),
+            SizedBox(height: 5),
+
+            DropdownButton(
+              hint: Text('Select from Below'),
+              items: [
+                DropdownMenuItem(
+                  enabled: true,
+                  value: 'Dhaka',
+                  child: Text('Dhaka'),
+                ),
+                DropdownMenuItem(value: 'Bhola', child: Text('Bhola')),
+                DropdownMenuItem(value: 'Rajshahi', child: Text('Rajshahi')),
+                DropdownMenuItem(
+                  value: 'Chattagram',
+                  child: Text('Chattagram'),
+                ),
+              ],
+              onChanged: (value) {
+                showSnack(context, value.toString());
+              },
+            ),
+            SizedBox(height: 5),
+
+            Checkbox(
+              value: true,
+              onChanged: (value) {
+                if (value == true) {
+                  showSnack(context, 'true');
+                }
+                if (value == false) {
+                  showSnack(context, 'false');
+                }
               },
             ),
           ],
