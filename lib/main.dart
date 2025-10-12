@@ -129,13 +129,21 @@ class Homepage extends StatelessWidget {
                   ).createShader(Rect.fromLTWH(50, 0, 400, 10)),
               ),
             ),
+
+            TextFormField(
+              decoration: InputDecoration(labelText: 'input din'),
+
+              onFieldSubmitted: (value) {
+                showSnack(context, value);
+              },
+            ),
           ],
         ),
       ),
     );
   }
 
-  void showSnack(BuildContext ctx, String msg) {
-    ScaffoldMessenger.of(ctx).showSnackBar(SnackBar(content: Text(msg)));
+  void showSnack(BuildContext context, String msg) {
+    ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(msg)));
   }
 }
